@@ -26,7 +26,7 @@
   "include": [
     "next-env.d.ts",
     "src/**/*",
-    ".next/types/**/*.ts"
-, "src/lib", "src/compone, "../app", "../components"nts"  ],
+    ".next/types/**/*.ts", "lib",
+  ],
   "exclude": ["node_modules"]
 }
