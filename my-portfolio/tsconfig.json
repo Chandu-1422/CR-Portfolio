@@ -27,6 +27,6 @@
     "next-env.d.ts",
     "src/**/*",
     ".next/types/**/*.ts"
-, "src/lib"  ],
+, "src/lib", "src/compone, "../app", "../components"nts"  ],
   "exclude": ["node_modules"]
 }
