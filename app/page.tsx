@@ -540,6 +540,7 @@ export default function Portfolio() {
         "A mobile user interface for a healthcare appointment booking system. Focused on creating a seamless user experience for patients to search, schedule, and manage doctor appointments.",
       image: "/HealthHub.jpg?height=300&width=400",
       tech: ["Mobile UI", "Figma", "UX Design", "Healthcare"],
+      liveLink: "https://www.figma.com/design/GSO1XbaAr9SBpzM4atcZZn/Appointment-booking?node-id=0-1&t=2QPT4UtEnCpmCJ7B-1",
     },
     {
       title: "Sneakers Store - Echo Soles",
