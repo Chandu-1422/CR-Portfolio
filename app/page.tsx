@@ -879,96 +879,87 @@ export default function Portfolio() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-20 bg-white dark:bg-gray-900">
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <motion.h2
-                className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+<section id="projects" className="py-20 bg-white dark:bg-gray-900">
+  <div className="container mx-auto px-6">
+    <div className="max-w-6xl mx-auto">
+      <motion.h2
+        className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        Featured Projects
+      </motion.h2>
+      <motion.div
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {projects.map((project, index) => (
+          <motion.div key={index} variants={cardVariants} whileHover="hover">
+            <Card className="group border-0 shadow-lg overflow-hidden h-full">
+              <Link
+                href={project.liveLink || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
               >
-                Featured Projects
-              </motion.h2>
-              <motion.div
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                {projects.map((project, index) => (
-                  <motion.div key={index} variants={cardVariants} whileHover="hover">
-                    <Card className="group border-0 shadow-lg overflow-hidden h-full">
-                      <div className="relative overflow-hidden">
-                        <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.4 }}>
-                          <Image
-                            src={project.image || "/pricing.png"}
-                            alt={project.title}
-                            width={500}
-                            height={500}
-                            className="transition-transform duration-300 group-hover:scale-105"
-                          />
-                        </motion.div>
-                        <motion.div
-                          className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
-                          initial={{ opacity: 0 }}
-                          whileHover={{ opacity: 1 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                        <motion.div
-                          className="absolute top-4 right-4 flex gap-2"
-                          initial={{ opacity: 0, y: -10 }}
-                          whileHover={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                        <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-                        <Link
-                          href={project.liveLink || "#"}
-                          className="p-2 bg-white/90 rounded-full text-blue-600 hover:bg-white transition-colors"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </Link>
-                        </motion.div>
-                          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-                            <Link
-                              href={project.liveLink || "#"}
-                              target="_blank"
-                              className="p-2 bg-white/90 rounded-full text-gray-600 hover:bg-white transition-colors"
-                            >
-                            </Link>
-                          </motion.div>
-                        </motion.div>
-                      </div>
-                      <CardHeader>
-                        <CardTitle className="text-lg">{project.title}</CardTitle>
-                        <CardDescription className="text-sm">{project.description}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <motion.div
-                          className="flex flex-wrap gap-2"
-                          variants={containerVariants}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                        >
-                          {project.tech.map((tech, techIndex) => (
-                            <motion.div key={techIndex} variants={itemVariants} whileHover={{ scale: 1.1, rotate: 2 }}>
-                              <Badge variant="outline" className="text-xs">
-                                {tech}
-                              </Badge>
-                            </motion.div>
-                          ))}
-                        </motion.div>
-                      </CardContent>
-                    </Card>
+                <div className="relative overflow-hidden">
+                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.4 }}>
+                    <Image
+                      src={project.image || "/pricing.png"}
+                      alt={project.title}
+                      width={500}
+                      height={500}
+                      className="transition-transform duration-300 group-hover:scale-105 w-full h-auto"
+                    />
                   </motion.div>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </section>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </div>
+              </Link>
+
+              <CardHeader>
+                <CardTitle className="text-lg">{project.title}</CardTitle>
+                <CardDescription className="text-sm">{project.description}</CardDescription>
+              </CardHeader>
+
+              <CardContent>
+                <motion.div
+                  className="flex flex-wrap gap-2"
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  {project.tech.map((tech, techIndex) => (
+                    <motion.div
+                      key={techIndex}
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.1, rotate: 2 }}
+                    >
+                      <Badge variant="outline" className="text-xs">
+                        {tech}
+                      </Badge>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  </div>
+</section>
+
 
         {/* Experience Section */}
         <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800">
