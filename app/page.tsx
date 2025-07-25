@@ -540,15 +540,15 @@ export default function Portfolio() {
         "A mobile user interface for a healthcare appointment booking system. Focused on creating a seamless user experience for patients to search, schedule, and manage doctor appointments.",
       image: "/HealthHub.jpg?height=300&width=400",
       tech: ["Mobile UI", "Figma", "UX Design", "Healthcare"],
-      livelink: "https://www.figma.com/design/GSO1XbaAr9SBpzM4atcZZn/Appointment-booking?node-id=0-1&t=m6wvcn8B1KHW9l10-1",
+      liveLink: "https://www.figma.com/design/GSO1XbaAr9SBpzM4atcZZn/Appointment-booking?node-id=0-1&t=m6wvcn8B1KHW9l10-1",
     },
     {
       title: "Sneakers Store - SneakPeak",
       description:
         "A Sneaker Store for Sneakerheads with various collections of sneakers. SneakPeak brings the heat to your feet. Designed for true enthusiasts who live the culture and love the craft — every pair tells a story.",
-      image: "/E-commerce.jpg?height=300&width=400",
-      tech: ["E-commerce", "HTML", "CSS", "React", "JavaScript"],
-      livelink: "https://sneaker-store-pearl-iota.vercel.app/"
+      image: "/E-commerce.png?height=300&width=400",
+      tech: ["HTML", "CSS", "React", "NextJS", "TypeScript", "E-commerce"],
+      liveLink: "https://sneaker-store-pearl-iota.vercel.app/"
     },
   ]
 
